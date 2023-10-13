@@ -1,0 +1,181 @@
+:root {
+    --primary-color : #ec1f55;
+    --text-color : #333;
+}
+/* root dùng để khai báo thêm biến và biến thì có dấu -- */
+
+* {
+    padding: 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f5f5f5;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+.player {
+    position: relative;
+    max-width: 480px;
+    margin: auto;
+}
+.player .fa-pause {
+    display : none;
+}
+.player.playing .fa-play{
+    display: none;
+}
+.player.playing .fa-pause{
+    display : inline-block
+}
+/* inline thì nó sẽ chỉ chiếm width và heigh đúng bằng kích thước nó còn block sẽ chiếm toàn bộ chiều rộng và nhảy xuống dòng mới 
+=> inline-block là nhảy dòng mới và k có thêm chiều rộng */
+/* mặc định thẻ sẽ không có display nên là khi thêm display none vào thì lúc muốn hiện ra thì phải thêm display kahcs vào */
+.dashboard{
+    padding: 16px 16px 14px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+  width: 100%;
+  max-width: 480px;
+  border-bottom: 1px solid #ebebeb;
+}
+h2{
+    text-align: center;
+    color: var(--primary-color);
+    text-align: center;
+}
+h4{
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--text-color);
+  font-size: 20px;
+}
+.cd {
+    display: flex;
+    margin: auto;
+    width: 200px;
+}
+/* cd no cung khong co height thi tức là paddingtop nó sẽ có khoảng trống đúng bằng width */
+/* tại paddingtop nó thường lập đầy khoảng trống đề thành ô vuông */
+.cd-thumb{
+    animation: spin 10s linear infinite;
+    width: 100%;
+    /* height: 200px; để chiều cao bằng mặc định như này thì khi giảm chiều rộng sẽ không giảm chiều cao */
+     /*kỹ thuật padding hack là để chiều cao bằng padding top thì sẽ được  */
+     padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  margin: auto;
+  background-repeat: no-repeat;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); } /* Góc ban đầu 0 độ */
+    100% { transform: rotate(360deg); } /* Quay một vòng đầy 360 độ */
+}
+
+/* background size dùng để ảnh cover vào cho hợp với khung hình */
+/* một là cho padding top bottom 100% hoặc là để hei bằng width */
+.control {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 18px 0px 8px 0px;
+}
+.control .btn{
+    color: #666;
+    padding: 18px;
+    font-size: 18px;
+}
+.control .btn.active{
+    color : var(--primary-color)
+}
+.control .btn-toogle-play{
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+.rotating-cd {
+    width: 200px; /* Kích thước của hình ảnh */
+    animation: spin 2s linear infinite; /* Sử dụng animation để quay */
+}
+.progress{
+    width: 100%;
+    -webkit-appearance: none;
+    height: 6px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+}
+/* opacity là độ mờ */
+/* font-size dùng để chỉnh cỡ của item đó */
+.progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* nó loại bỏ giao diện mặc định của thành progress */
+    appearance: none;
+    /* cái  này để phủ hợp với các web khác */
+    width: 12px;
+    height: 6px;
+    background-color: var(--primary-color);
+    cursor: pointer;
+  }
+  /* đặt thanh kéo thành màu đỏ(thiết kế lại cái slider) */
+  .playlist{
+    margin-top: 408px;
+    padding: 12px;
+  }
+  .song{
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    /* cái boxshadow này là độ lệch ngang dọc của bóng thì có nghĩa là bóng mờ 3px độ lệch 2px độ lệch dọc và độ lêch ngang 0 0.1 là độ trong suốt */
+  }
+  .song.active{
+    background-color: var(--primary-color);
+  }
+  .song:active{
+    opacity: 0.8;
+  }
+  .song.active .option,.song.active .author{
+    color: #333;
+  }
+  .song .thumb{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 8px;
+  }
+  .song .author{
+    font-size: 12px;
+    color: #999;
+  }
+  .song .title{
+    font-size: 18px;
+    color: var(--text-color);
+  }
+  .song .option{
+    font-size: 18px;
+    color :#999;
+    padding: 16px 8px;
+  }
+  .song .body{
+    flex: 1;
+   padding: 0 16px; 
+  }
+  /* flex 1 tuc la mo rong ra cac khoang trong lam cho cac phan tu ke tiep no bi day ra xa nhu boxcontainer */

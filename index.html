@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/36ca39a91d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <title>Music Page</title>
+</head>
+
+<body>
+    <div class="player">
+        <div class="dashboard">
+            <header>
+            <h2>Now Playing :</h2>
+            <h4>String</h4> 
+            </header>
+            <div class="cd">
+                <div class="cd-thumb" onclick="spinCD()" style ="background-image : url('https://gaixinhbikini.com/wp-content/uploads/2022/09/52321187927_023da6d2ec_o.jpg');"></div>
+            </div>
+            <div class="control">
+                <div class="btn btn-repeat">
+                    <i class="fa-solid fa-repeat"></i>
+                </div>
+                <div class="btn btn-pre">
+                    <i class="fa-solid fa-backward"></i>
+                </div>
+                <div class="btn btn-toogle-play">
+                    <i class="fa-solid fa-pause" style="color: #000000;"></i>
+                    <i class="fa-solid fa-play" style="color: #0b0909;"></i>
+                </div>
+                
+                <div class="btn btn-next">
+                    <i class="fa-solid fa-forward"></i>
+                </div>
+                <div class="btn btn-random">
+                    <i class="fa-solid fa-shuffle"></i>
+                </div>
+            </div>
+            <input type="range" id="progress" class="progress" min="0" max="100" value="0" step="1" >
+            <audio src="" id="audio"></audio>
+        </div>
+        <div class="box">
+            <div class="playlist">
+                <div class="song">
+                    <div class="thumb" style="background-image: url('https://daily.jstor.org/wp-content/uploads/2023/01/good_times_with_bad_music_1050x700.jpg');"></div>
+                    <div class="body">
+                        <h3 class="title">Music name</h3>
+                        <p class="author">Singer</p>
+                    </div>
+                    <div class="option"><i class="fa-solid fa-list"></i></div>
+                </div>
+                <div class="song">
+                    <div class="thumb" style="background-image: url('https://daily.jstor.org/wp-content/uploads/2023/01/good_times_with_bad_music_1050x700.jpg');"></div>
+                    <div class="body">
+                        <h3 class="title">Music name</h3>
+                        <p class="author">Singer</p>
+                    </div>
+                    <div class="option"><i class="fa-solid fa-list"></i></div>
+                </div>
+                <div class="song">
+                    <div class="thumb" style="background-image: url('https://daily.jstor.org/wp-content/uploads/2023/01/good_times_with_bad_music_1050x700.jpg');"></div>
+                    <div class="body">
+                        <h3 class="title">Music name</h3>
+                        <p class="author">Singer</p>
+                    </div>
+                    <div class="option"> <i class="fa-solid fa-list"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
